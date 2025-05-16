@@ -1,6 +1,6 @@
 # Student Course Enrollment System
 
-A Spring Boot application that allows students to register, enroll in courses, check schedules, and drop classes.
+A full-stack application that allows students to register, enroll in courses, check schedules, and drop classes. The system consists of a Spring Boot backend and a React frontend.
 
 ## Features
 
@@ -9,8 +9,11 @@ A Spring Boot application that allows students to register, enroll in courses, c
 - Course enrollment with validation (prerequisites, time clash, capacity)
 - Schedule management
 - RESTful API for all operations
+- Modern React frontend with Material-UI
 
 ## Technologies Used
+
+### Backend
 
 - Java 17
 - Spring Boot 3.2.0
@@ -19,7 +22,17 @@ A Spring Boot application that allows students to register, enroll in courses, c
 - Flyway for database migrations
 - Maven
 
+### Frontend
+
+- React 18
+- Material-UI
+- React Router
+- Axios
+- React Data Grid
+
 ## Project Structure
+
+### Backend
 
 - **Model**: Student, Course, Enrollment, Schedule
 - **Repository**: JPA repositories for data access
@@ -27,6 +40,18 @@ A Spring Boot application that allows students to register, enroll in courses, c
 - **Controller**: REST API endpoints
 - **DTO**: Data Transfer Objects for API communication
 - **Exception**: Custom exceptions and global exception handling
+
+### Frontend
+
+- **components**: Reusable UI components
+  - **common**: Common UI elements (PageHeader, LoadingSpinner, etc.)
+  - **layout**: Layout components (Navbar, Sidebar, Footer)
+- **pages**: Page components
+  - **students**: Student-related pages (List, Form, Detail)
+  - **courses**: Course-related pages
+  - **enrollments**: Enrollment-related pages
+  - **schedules**: Schedule-related pages
+- **services**: API service layer for backend communication
 
 ## API Endpoints
 
@@ -81,6 +106,8 @@ A Spring Boot application that allows students to register, enroll in courses, c
 
 - Java 17 or higher
 - Maven
+- Node.js 14 or higher
+- npm or yarn
 
 ### Database Setup
 
@@ -88,17 +115,24 @@ A Spring Boot application that allows students to register, enroll in courses, c
 2. Create a MySQL user or use the root user (for development only)
 3. Update the database configuration in `application.properties` with your MySQL credentials
 
-### Running the Application
+### Running the Backend
 
 1. Clone the repository
 2. Navigate to the project directory
 3. Run `mvn spring-boot:run`
-4. Access the API at `http://localhost:8081/api`
+4. The backend API will be available at `http://localhost:8081/api`
 
 ### Running with Different Profiles
 
 - Development mode: `mvn spring-boot:run -Dspring-boot.run.profiles=dev`
 - With sample data loader: `mvn spring-boot:run -Dspring-boot.run.profiles=dev-data-loader`
+
+### Running the Frontend
+
+1. Navigate to the frontend directory: `cd frontend`
+2. Install dependencies: `npm install` or `yarn install`
+3. Start the development server: `npm start` or `yarn start`
+4. Access the application in your browser at `http://localhost:3000`
 
 ### Sample Data
 
@@ -108,6 +142,29 @@ The application is pre-loaded with sample data through Flyway migrations:
 - 3 courses with prerequisites
 - 5 schedules
 - 2 enrollments
+
+## Frontend Features
+
+The React frontend provides a modern, responsive user interface for the Student Course Enrollment System:
+
+- **Dashboard**: Overview with statistics and quick actions
+- **Student Management**: View, add, edit, and delete students
+- **Course Management**: View, add, edit, and delete courses
+- **Enrollment Management**: Enroll students in courses with validation
+- **Schedule Viewing**: View student schedules and course timetables
+
+### UI/UX Features
+
+- **Responsive Design**: Works on desktop and mobile devices
+- **Material Design**: Clean, intuitive interface using Material-UI components
+- **Form Validation**: Client-side validation for data integrity
+- **Search & Filter**: Easy filtering of data in list views
+- **Interactive Elements**: Confirmation dialogs, alerts, and loading indicators
+- **Multi-step Forms**: Guided enrollment process with validation at each step
+
+## Screenshots
+
+(Add screenshots of the application here)
 
 ## License
 
