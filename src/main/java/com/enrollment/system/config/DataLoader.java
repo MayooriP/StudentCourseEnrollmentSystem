@@ -152,3 +152,4 @@ public class DataLoader implements CommandLineRunner {
         enrollmentRepository.save(enrollment2);
     }
 }
+
